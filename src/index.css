@@ -32,11 +32,9 @@ button{
 button:hover{
   transform: translate(1px,2px);
   box-shadow: 0px 1px 10px red;
-
+  z-index: 9;
 }
 .App{
-  max-width: 100vw;
-  max-height: 100vh;
   box-sizing: border-box;
 }
 h1{
@@ -57,7 +55,7 @@ img{
   /* box-shadow: 1px 1px 50px red; */
   transition: all 250ms;
   cursor: pointer;
-  z-index: 2;
+  z-index: 8;
 }
 
 img:hover{
@@ -100,7 +98,7 @@ img:hover{
   border-radius: 50%;
   top:5rem;
   right : 15rem;
-  z-index: 0;
+  z-index: -1;
 }
 .heading:after{
   content: "";
@@ -112,7 +110,7 @@ img:hover{
   border-radius: 50%;
   top:5rem;
   left : 15rem;
-  z-index: 0;
+  z-index: -1;
 }
 
 .flex{
@@ -128,6 +126,14 @@ img:hover{
     width: 300px;
     height: 300px;
   }
+  .A_cute_text:before{
+    display: none;
+  }
+  
+  .A_cute_text:after{
+    display: none;
+  }
+  
   button{
     width: 100px;
     height: 40px;
@@ -139,5 +145,9 @@ img:hover{
     box-shadow: 1px 2px 5px red;
     transition: all 250ms;
     cursor: pointer;
+  }
+  .App{
+    width: 100vw;
+    height: 100vh;
   }
 }

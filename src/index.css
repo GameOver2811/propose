@@ -12,142 +12,94 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-*{
+
+* {
   background-color: black;
 }
-button{
-  width: 200px;
-  height: 50px;
+
+button {
+  width: 150px; /* Adjusted width for smaller screens */
+  height: 40px; /* Adjusted height for smaller screens */
   color:  white;
-  font-size: 1.5rem;
+  font-size: 1rem; /* Adjusted font size for smaller screens */
   font-weight: bolder;
   border: none;
   border-bottom: 2px solid red;
   box-shadow: 1px 2px 5px red;
-  margin-left: 20px;
+  margin: 10px; /* Adjusted margin for better spacing */
   transition: all 250ms;
   cursor: pointer;
   text-shadow: 1px 2px 5px red;
 }
-button:hover{
-  transform: translate(1px,2px);
+
+button:hover {
+  transform: translate(1px, 2px);
   box-shadow: 0px 1px 10px red;
   z-index: 9;
 }
-.App{
+
+.App {
   box-sizing: border-box;
 }
-h1{
-  color : white;
+
+h1 {
+  color: white;
   text-shadow: 1px 2px 5px red;
-}
-.A_cute_text{
-  margin : 10px;
-  color : white;
-  font-size: 2rem;
-  text-shadow: 1px 2px 5px red;
-  z-index: 8;
 }
 
-img{
-  width: 400px;
-  height: 400px;
-  /* box-shadow: 1px 1px 50px red; */
-  transition: all 250ms;
+.A_cute_text {
+  margin: 10px;
+  color: white;
+  font-size: 1.5rem; /* Adjusted font size for smaller screens */
+  text-shadow: 1px 2px 5px red;
+}
+
+img {
+  width: 100%; /* Make images fill the container */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 250ms;
   cursor: pointer;
+  box-shadow: 1px 1px 20px red;
   z-index: 8;
 }
 
-img:hover{
+img:hover {
   transform: scale(1.01);
 }
 
-.A_cute_text:before{
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: black;
-  box-shadow: 4px 0px 10px red;
-  border-radius: 50%;
-  bottom:5rem;
-  right : 15rem;
-  z-index: -1;
+.A_cute_text:before,
+.A_cute_text:after,
+.heading:before,
+.heading:after {
+  display: none; /* Hide pseudo-elements on smaller screens */
 }
 
-.A_cute_text:after{
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: black;
-  box-shadow: 4px 0px 10px red;
-  border-radius: 50%;
-  bottom:5rem;
-  left : 15rem;
-  z-index: -1;
-}
-
-.heading:before{
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background-color: black;
-  box-shadow: 4px 0px 10px red;
-  border-radius: 50%;
-  top:5rem;
-  right : 15rem;
-  z-index: -1;
-}
-.heading:after{
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background-color: black;
-  box-shadow: -4px 0px 10px red;
-  border-radius: 50%;
-  top:5rem;
-  left : 15rem;
-  z-index: -1;
-}
-
-.flex{
+.flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap : 2rem;
+  gap: 2rem;
 }
 
-@media (max-width : 400px) {
-  img{
-    width: 300px;
-    height: 300px;
+@media (min-width: 401px) {
+  /* Styles for screens wider than 400px (larger screens) */
+  img {
+    width: 400px;
+    height: 400px;
   }
-  .A_cute_text:before{
-    display: none;
+
+  .A_cute_text:before,
+  .A_cute_text:after,
+  .heading:before,
+  .heading:after {
+    display: block; /* Show pseudo-elements on larger screens */
   }
-  
-  .A_cute_text:after{
-    display: none;
-  }
-  
-  button{
-    width: 100px;
-    height: 40px;
-    color:  white;
-    font-size: 1rem;
-    font-weight: bolder;
-    border: none;
-    border-bottom: 2px solid red;
-    box-shadow: 1px 2px 5px red;
-    transition: all 250ms;
-    cursor: pointer;
-  }
-  .App{
-    width: 100vw;
-    height: 100vh;
+
+  button {
+    width: 200px;
+    height: 50px;
+    font-size: 1.5rem;
   }
 }
+
